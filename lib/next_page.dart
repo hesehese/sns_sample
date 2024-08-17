@@ -18,7 +18,7 @@ class _AddPageState extends State<AddPage> {
       "createdAt": DateTime.now(),
     };
 // Add a new document with a generated ID
-    FirebaseFirestore.instance.collection("posts").add(user);
+    FirebaseFirestore.instance.collection("new").add(user);
   }
 
   @override

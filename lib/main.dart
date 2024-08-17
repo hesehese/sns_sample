@@ -51,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   Future _fetchFirebaseDate() async {
-    await FirebaseFirestore.instance.collection("posts").orderBy('createdAt', descending: true).get().then((event) {
+
+
+    await FirebaseFirestore.instance.collection("new").orderBy('createdAt', descending: true).get().then((event) {
       final docs = event.docs;
       setState(() {
         texts = docs.map((doc) => doc.data()["text"].toString()).toList();
