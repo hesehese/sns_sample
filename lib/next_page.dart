@@ -11,14 +11,14 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   String newText = "";
 
-  Future _addFirebaseData() async {
+  void _addFirebaseData() async {
     // Create a new user with a first and last name
     final user = <String, dynamic>{
       "text": newText,
       "createdAt": DateTime.now(),
     };
 // Add a new document with a generated ID
-    FirebaseFirestore.instance.collection("new").add(user);
+    await FirebaseFirestore.instance.collection("new").add(user);
   }
 
   @override
